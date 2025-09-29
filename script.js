@@ -107,7 +107,7 @@ function renderTasks() {
 
     const deleteBtn = document.createElement("button");
     deleteBtn.classList.add("delete-btn");
-    deleteBtn.innerHTML = '<i class="fas fa-times"></i>';
+    deleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
     deleteBtn.addEventListener("click", () => deleteTask(task.id));
 
     taskItem.appendChild(checkboxContainer);
