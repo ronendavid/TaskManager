@@ -63,7 +63,7 @@ header p {
   background-color: var(--light);
   border-bottom: 1px solid var(--border);
 
-  @media (max-width: 500px) {
+  @media (max-width: 555px) {
     flex-direction: column;
   }
 }
@@ -93,7 +93,7 @@ header p {
   cursor: pointer;
   transition: all 0.2s;
 
-  @media (max-width: 500px) {
+  @media (max-width: 555px) {
     width: 100%;
   }
 }
