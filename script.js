@@ -188,8 +188,8 @@ sortByDateBtn.className = 'filter';
 sortByDateBtn.textContent = 'Sort by Date';
 sortByDateBtn.addEventListener('click', () => {
   tasks.sort((a, b) => {
-    const dateA = new Date(a.dueDate || '31-12-9999');
-    const dateB = new Date(b.dueDate || '31-12-9999');
+    const dateA = new Date(a.dueDate.split('/').reverse().join('-') || '9999-12-31');
+    const dateB = new Date(b.dueDate.split('/').reverse().join('-') || '9999-12-31');
     return dateA - dateB;
   });
   renderTasks();
