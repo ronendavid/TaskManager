@@ -117,7 +117,7 @@ function renderTasks() {
     if (task.dueDate) {
       const dueDateElement = document.createElement("span");
       dueDateElement.classList.add("task-due-date");
-      dueDateElement.textContent = `Due: ${task.dueDate}`;
+      dueDateElement.textContent = `Due: ${formatDateToHebrewStyle(task.dueDate)}`;
       taskItem.appendChild(dueDateElement);
     }
 
@@ -188,8 +188,8 @@ sortByDateBtn.className = 'filter';
 sortByDateBtn.textContent = 'Sort by Date';
 sortByDateBtn.addEventListener('click', () => {
   tasks.sort((a, b) => {
-    const dateA = new Date(a.dueDate || '9999-12-31');
-    const dateB = new Date(b.dueDate || '9999-12-31');
+    const dateA = new Date(a.dueDate || '31-12-9999');
+    const dateB = new Date(b.dueDate || '31-12-9999');
     return dateA - dateB;
   });
   renderTasks();
@@ -231,3 +231,9 @@ window.addEventListener("DOMContentLoaded", () => {
   updateItemsCount();
   setDate();
 });
+
+// Function to format date in Hebrew style (DD/MM/YYYY)
+function formatDateToHebrewStyle(dateString) {
+  const [year, month, day] = dateString.split("-");
+  return `${day}/${month}/${year}`;
+}
